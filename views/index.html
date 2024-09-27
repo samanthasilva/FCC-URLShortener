@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>URL Shortener Microservice | freeCodeCamp.org</title>
@@ -12,21 +11,93 @@
   </head>
 
   <body>
-    <h1>URL Shortener Microservice</h1>
-    <main>
-      <section>
-        <form action="api/shorturl" method="POST">
-          <fieldset>
-            <legend>URL Shortener</legend>
-            <label for="url_input">URL:</label>
-            <input id="url_input" type="text" name="url" placeholder="https://www.freecodecamp.org/" />
-            <input type="submit" value="POST URL" />
-          </fieldset>
-        </form>
-      </section>
-    </main>
-    <footer>
-      <p>By <a href="https://www.freecodecamp.org/">freeCodeCamp</a></p>
-    </footer>
+    <div class="container">
+      <h1>URL Shortener Microservice</h1>
+      <main>
+        <section>
+          <form action="api/shorturl" method="POST">
+            <fieldset>
+              <legend>URL Shortener</legend>
+              <div>
+              <label for="url_input">URL:</label>
+              <input
+                id="url_input"
+                type="text"
+                name="url"
+                placeholder="https://www.freecodecamp.org/"
+              />
+            </div>
+              <input type="submit" value="POST URL" />
+            </fieldset>
+          </form>
+                </section>
+      </main>
+
+      
+        <!-- Div para o robot e as mensagens -->
+        <div class="app">
+          <section class="app__messages">
+            <!-- As mensagens serão injetadas aqui pelo script -->
+          </section>
+
+          <div class="app__helper">
+            <div class="background">
+              <div class="eva">
+                <div class="head">
+                  <div class="face">
+                    <div class="eye eye-left"></div>
+                    <div class="eye eye-right"></div>
+                  </div>
+                </div>
+                <div class="body">
+                  <div class="arm arm-left"></div>
+                  <div class="arm arm-right"></div>
+                </div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Embutir o código JavaScript aqui -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log("DOM completamente carregado e analisado");
+
+        const messages = document.querySelector('.app__messages');
+
+        if (!messages) {
+          console.error("Elemento .app__messages não encontrado no DOM");
+          return;
+        }
+
+        const message = [
+       '<span> ❤ </span>Bem-vindo ao microserviço de <span>encurtador de URLs</span>.',
+       'Você já quis compartilhar um link longo, mas desejava que ele fosse mais curto e fácil de lembrar?',
+  'Eu sou o <span>Robo-Encurtador</span> de URLS e vou dar um jeito nisso <span>rapidinho</span>!',
+  'É só jogar sua <span>URL</span> em:',
+  '<code>[project_url]/api/shorturl</code>',
+  '✨ Abracadabra, <span>link encurtado </span>na mão!',
+];
+        let counter = 0;
+        const intervalID = setInterval(() => {
+          messages.innerHTML += `<div class="messages--message">${message[counter]}</div>`;
+          counter++;
+          
+          if (counter === message.length) {
+            clearInterval(intervalID);
+          }
+        }, 3000);
+      });
+    </script>
+
+      <footer class="cute-footer">
+        <p>
+          Desenvolvido 
+          <a href="https://github.com/samanthasilva/FCC-URLShortener" target="_blank" class="heart-link">❤</a>
+          por Samantha Silva
+        </p>
   </body>
 </html>

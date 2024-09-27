@@ -1,46 +1,312 @@
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  color: #222;
-  background-color: #fff;
-  text-align: center;
-  line-height: 1.4em;
+@import 'https://fonts.googleapis.com/css?family=Nunito';
+
+
+/* General reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, form, fieldset {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: 'Roboto', 'Open Sans', 'Nunito', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 40px 0;
+}
+
+legend {
+  color: #333;
+  font-family: "Nunito", sans-serif;
+  font-size: 120x;
+}
+
 
 main {
-  padding: 0;
-  margin-top: 40px;
+  background: #ffffff6b;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  margin-left: 172px;
 }
 
-h3 {
-  margin-top: 30px;
+form fieldset {
+  border: none;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-.user-stories li {
-  margin-bottom: 1em;
-}
-
-a {
-  color: #2574a9;
-}
-
-form {
-  margin: 10px auto;
-  padding: 20px;
-  max-width: 600px;
-}
-
-label {
+form label {
+  font-weight: bold;
   margin-right: 10px;
 }
 
-input {
-  padding: 5px;
+form input[type="text"] {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  width: 604px;
 }
 
-input[type='text'] {
-  width: 220px;
+
+form input[type="submit"] {
+  width: 136px;
+  height: 38px;
+  border-radius: 50px;
+  background: #fe12b9;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  margin-top: 131px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  margin-left: -148px;
+}
+
+
+form button {
+  background-color: #ffcdd9;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #ffcdd9;
+}
+footer {
   text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #333;
+  border-top: 2px solid #fe12b9;
+  margin-top: 20px;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.cute-footer p {
+  margin: 5px 0;
+}
+
+.cute-footer a {
+  color: #fe12b9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cute-footer .heart-link {
+  color: #ffb6c1; /* Cor de rosa claro */
+  font-size: 18px;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cute-footer .heart-link:hover {
+  transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Robot Styling */
+.app {
+  position: fixed;
+  right: 20px;
+  bottom: 267px;
+  display: flex;
+  flex-direction: column-reverse; /* Inverte a direção das mensagens */
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Mensagens alinhadas acima do robô, de baixo para cima */
+.app__messages {
+  display: flex;
+  flex-direction: column-reverse;
+  max-width: 191px;
+  border-radius: 8px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  max-height: 150px;
+  margin-bottom: 30px;
+}
+
+
+.messages--message {
+  word-wrap: break-word; /* Quebra as palavras longas para evitar expansão */
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 8px;
+  font-size: 10px;
+  flex-direction: column-reverse; 
+  justify-content: flex-end;
+  text-align: end;
+  max-width: 200px;
+
+}
+
+.messages--message span {
+  font-weight: bold;
+  color: #fe12b9;
+}
+
+/* Animações mantidas */
+.background {
+  position: fixed;
+  bottom: 106px;
+  right: 99px;
+  transform: scale(0.8);
+  transform-origin: bottom right;
+  z-index: 1000;
+}
+.eva {
+  width: 129px;
+  height: 253px;
+  animation: up .4s infinite alternate ease-in-out;
+}
+.head {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  width: 120px;
+  height: 82px;
+  border-radius: 100% 100% 95% 95%;
+  background: linear-gradient(45deg, #eee, #ffcdd9, #ffcdd9 90%);
+  animation: head 2s infinite alternate ease-in-out;
+}
+.face {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  width: 100px;
+  height: 60px;
+  border-radius: 50%;
+  background: #333;
+}
+.eye {
+  width: 32px;
+  height: 18px;
+  background: #ccf9fc;
+  transform: rotate(16deg);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ccf9fc;
+}
+.eye-left{
+  position: absolute;
+  top: 20px;
+  left: 13px;
+  animation: eye-left 4s infinite alternate ease-in-out;
+}
+.eye-right {
+  position: absolute;
+  top: 20px;
+  left: 56px;
+  transform: rotate(-16deg);
+  animation: eye-right 4s infinite alternate ease-in-out;
+}
+.body {
+  position: absolute;
+  top: 95px;
+  left: 40px;
+  width: 100px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #eee, #ffcdd9, #ffcdd9 85%);
+}
+.body::before {
+  width: 100px;
+  height: 85px;
+  background: #ffcdd9;
+  border-radius: 10%;
+  content:"";
+}
+.arm {
+  width: 30px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #eee, #ffcdd9, #ffcdd9 50%);
+}
+.arm-right {
+  position: absolute;
+  left: 100px;
+  -webkit-transform: rotate(-16deg);
+  -ms-transform: rotate(-16deg);
+  transform: rotate(-16deg);
+  animation: arm-right .4s infinite alternate ease-in-out;
+}
+.arm-left {
+  position: absolute;
+  -webkit-transform: rotate(16deg);
+  -ms-transform: rotate(16deg);
+  transform: rotate(16deg);
+  left: -30px;
+  animation: arm-left .4s infinite alternate ease-in-out;
+}
+.shadow {
+  position: absolute;
+  top: 290px;
+  left: 47px;
+  width: 90px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: shadow .4s infinite alternate ease-in-out;
+}
+
+@keyframes up {
+  0%   {transform: translateY(-5px)}
+  100% {transform: translateY(5px);}
+}
+@keyframes head {
+  100% {transform: rotate(-15deg)}
+}
+@keyframes shadow {
+	0% {transform: scaleX(1)}
+	100% {transform: scaleX(1.2)}
+}
+@keyframes arm-left {
+	0% {transform: rotate(16deg)}
+	100% {transform: rotate(22deg)}
+}
+@keyframes arm-right {
+	0% {transform: rotate(-16deg)}
+	100% {transform: rotate(-22deg)}
+}
+@keyframes eye-left {
+	0% {transform: rotate(16deg)}
+	100% {transform: rotate(-22deg)}
+}
+@keyframes eye-right {
+	0% {transform: rotate(-16deg)}
+	100% {transform: rotate(22deg)}
 }
